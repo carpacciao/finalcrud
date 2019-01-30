@@ -15,7 +15,8 @@ class UsersTableSeeder extends Seeder
             'name'              => 'Lucas Van Driessche',
             'email'             => 'lucasvd@msn.com',
             'password'          => bcrypt('lucas'),
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
+            'role_id'           => 1
         ]);
     }
 }

@@ -27,7 +27,6 @@ class UpdateUserRequest extends FormRequest
         return [
             'name' => 'required|min:5',
             'email' => 'required|email|unique:users,email,' . $id . 'id',
-            'image' => 'required|image'
         ];
     }
 }
