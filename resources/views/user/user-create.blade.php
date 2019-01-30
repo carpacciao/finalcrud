@@ -7,6 +7,21 @@
 @stop
 
 @section('content')
+
+@if($errors->any())
+    @foreach ($errors->all() as $error)
+        <ul>
+          <li>{{$error}}</li>
+        </ul>
+    @endforeach
+@endif
+
+@if($errors->has('name'))
+  @foreach ($errors->get('name') as $error)
+      <div class="text-danger">{{$error}}</div>
+  @endforeach
+@endif
+
 <div class="container">
   <form action="{{route('user.store')}}" method="POST">
     @csrf

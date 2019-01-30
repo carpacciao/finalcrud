@@ -19,7 +19,7 @@
             <label for="">Text</label>
             <textarea name="text" name="text" id="" cols="30" rows="10" class="form-control">{{$article->text}}</textarea>
         </div>
-        <img style="float: left;" src="{{Storage::disk('image')->url($article->image)}}" alt="">
+        <img style="float: left; max-width: 100%" src="{{Storage::disk('image')->url($article->image)}}" alt="">
         <div style="float: left;" class="form-group mx-3">
             <label for="">image</label>
             <input type="file" class="form-control-file" id="inlineFormInputGroupUsername" name="image" placeholder="Password">
