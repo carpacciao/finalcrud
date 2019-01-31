@@ -29,7 +29,7 @@
       <div class="input-group-prepend">
         <div class="input-group-text"><i class="fa fa-fw fa-user"></i></div>
       </div>
-      <input type="text" class="form-control" id="inlineFormInputGroupUsername" name="name" placeholder="Name">
+    <input type="text" class="form-control {{$errors->has('name')? 'border-danger' : '' }}" id="inlineFormInputGroupUsername" name="name" value="{{old('name')}}" placeholder="Name">
     </div>
     <br>
     <div class="input-group">
