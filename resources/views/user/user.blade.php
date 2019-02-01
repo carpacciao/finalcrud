@@ -14,6 +14,7 @@
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
+        <th scope="col">Role</th>
         <th scope="col">Password</th>
         <th scope="col"></th>
         </tr>
@@ -27,8 +28,9 @@
         @foreach ($users as $user)
             <tr>
                 <th scope="row">{{$user->id}}</th>
-                <td>{{$user->name}} **{{$user->role->name}}**</td>
+                <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
+                <td>{{$user->role->name}}</td>
                 <td>{{$user->password}}</td>
                 <td>
                     <a href="{{route('user.show', ['user' => $user->id])}}" class="btn btn-primary btn-sm">show</a>

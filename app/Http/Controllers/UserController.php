@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Role;
 class UserController extends Controller
 {
     /**
@@ -26,7 +27,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.user-create');
+        $roles = Role::all();
+        return view('user.user-create', compact('roles'));
     }
 
     /**
@@ -41,6 +43,7 @@ class UserController extends Controller
         $newuser->name = $request->name;
         $newuser->email = $request->email;
         $newuser->password = bcrypt($request->password);
+        $newuser->role_id = $request->role;
         $newuser->save();
 
         $users = User::all();
